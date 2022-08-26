@@ -1,0 +1,21 @@
+
+.field {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.text {
+  font-size: 20px;
+  color: #132237;
+  margin-bottom: 12px;
+}
+
+.input {
+  padding: 5px 15px;
+  max-width: 400px;
+  height: 35px;
+  border-radius: 8px;
+  border: 1px solid #132237;
+  outline: none;
+}
