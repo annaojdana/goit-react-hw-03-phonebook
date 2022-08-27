@@ -62,8 +62,8 @@ class App extends Component {
     const newContactList = this.state.contacts.filter(
       contact => contact.id !== id
     );
-    this.setState({ ...this.state, contacts: newContactList });
     save(localStorageKey, newContactList);
+    this.setState({ ...this.state, contacts: newContactList });
   };
 
   setFilterContacts = (filterValue, contactsArray) => {
