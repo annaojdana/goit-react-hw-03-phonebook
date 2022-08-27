@@ -43,15 +43,13 @@ class App extends Component {
       const filteredNumber = contacts.filter(
         contact => contact.number === number
       )[0].name;
-      console.log(filteredNumber);
       alert(`${number} is already in contact with ${filteredNumber} `);
       return;
     }
     const newContactArray = [newContact, ...contacts];
 
-    console.log(`po kliknięciu add contact ${newContactArray}`);
     this.setContactsInStorage(newContactArray);
-    this.setState(({ contacts }) => ({
+    this.setState(() => ({
       contacts: newContactArray,
     }));
   };
@@ -81,18 +79,14 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log(this.componentDidMount);
     const myPhonebookContacts = this.getContactFromStorage();
     this.setState(oldState => ({ ...oldState, contacts: myPhonebookContacts }));
-    console.log(this.state);
   }
 
   render() {
     const { wrapper } = styles;
     const { filter } = this.state;
     const phonebookContacts = this.getContactFromStorage();
-    console.log(phonebookContacts);
-    console.log(this.state);
     return (
       <div className={wrapper}>
         <Section title="Phonebook">
